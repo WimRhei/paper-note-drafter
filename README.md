@@ -114,7 +114,7 @@ powershell -ExecutionPolicy Bypass -File .\scripts\bootstrap-windows.ps1 -Repo <
 也可以设置直接下载 URL：
 
 ```powershell
-$env:PAPER_NOTE_DRAFTER_PDFFIGURES2_JAR_URL = "https://github.com/<owner>/<repo>/releases/download/v0.1.0/pdffigures2-assembly.jar"
+$env:PAPER_NOTE_DRAFTER_PDFFIGURES2_JAR_URL = "https://github.com/<owner>/<repo>/releases/latest/download/pdffigures2-assembly.jar"
 powershell -ExecutionPolicy Bypass -File .\scripts\bootstrap-windows.ps1
 ```
 
