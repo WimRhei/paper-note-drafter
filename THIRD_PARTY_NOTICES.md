@@ -16,8 +16,9 @@ The project also downloads, builds, wraps, or redistributes third-party componen
 
 - Source: <https://github.com/oschwartz10612/poppler-windows>
 - Use: Windows Poppler binaries, including `pdftotext.exe`, when no local `pdftotext` is found.
-- License notes: the poppler-windows packaging repository is MIT licensed. The downloaded archive contains Poppler and dependencies, which may carry their own licenses. Keep and review the license files included in the downloaded archive.
+- License notes: the poppler-windows packaging repository is MIT licensed. Poppler itself is GPL licensed. This skill calls `pdftotext` as an external command and does not link against Poppler libraries.
 - This repository does not currently redistribute Poppler binaries in git or release assets; `bootstrap-windows.ps1` downloads them when needed.
+- Keep and review the license files included in the downloaded archive.
 
 ## Eclipse Temurin
 

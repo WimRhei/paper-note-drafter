@@ -127,7 +127,7 @@ This project is a Codex skill wrapper and workflow. It relies on third-party ope
 | Component | How it is used | Source | License notes |
 | --- | --- | --- | --- |
 | PDFFigures 2.0 | Extracts figures, tables and captions from scholarly PDFs. The release asset `pdffigures2-assembly.jar` is built from this project. | <https://github.com/allenai/pdffigures2> | Apache-2.0. See the upstream repository and `LICENSE.txt`. |
-| poppler-windows | Provides Windows Poppler binaries, including `pdftotext.exe`, when no local `pdftotext` is found. | <https://github.com/oschwartz10612/poppler-windows> | The packaging repository is MIT licensed. The package bundles Poppler binaries and dependencies; keep upstream license files from the downloaded archive. |
+| poppler-windows | Provides Windows Poppler binaries, including `pdftotext.exe`, when no local `pdftotext` is found. | <https://github.com/oschwartz10612/poppler-windows> | The packaging repository is MIT licensed. Poppler itself is GPL licensed; this skill calls `pdftotext` as an external command and does not redistribute Poppler binaries in this repository or release assets. Keep upstream license files from the downloaded archive. |
 | Eclipse Temurin | Provides a portable JRE when no local Java runtime is found. | <https://projects.eclipse.org/projects/adoptium.temurin> | Temurin is distributed under multiple open-source licenses. Specific license and NOTICE files are provided with the downloaded runtime binaries. |
 
 This repository is not affiliated with Allen Institute for AI, Poppler, conda-forge, oschwartz10612/poppler-windows, Eclipse Foundation, or Adoptium. Users are responsible for complying with the licenses of third-party components they download, build, redistribute, or use.
