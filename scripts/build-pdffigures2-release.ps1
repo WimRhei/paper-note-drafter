@@ -35,13 +35,7 @@ Push-Location $src
 try {
   git pull --ff-only
   sbt assembly
-  Write-Host "Jar candidates after sbt assembly:"
-  Get-ChildItem -Path $src -Recurse -Filter "*.jar" |
-    Sort-Object Length -Descending |
-    Select-Object -First 20 FullName, Length |
-    Format-Table -AutoSize
-
-  $jar = Get-ChildItem -Path (Join-Path $src "target") -Recurse -Filter "*.jar" |
+  $jar = Get-ChildItem -Path $src -Recurse -Filter "*.jar" |
     Where-Object { $_.FullName -notmatch "\\streams\\" -and $_.Length -gt 1MB } |
     Sort-Object Length -Descending |
     Select-Object -First 1
