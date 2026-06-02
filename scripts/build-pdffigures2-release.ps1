@@ -35,9 +35,12 @@ Push-Location $src
 try {
   git pull --ff-only
   sbt assembly
-  $jar = Get-ChildItem -Path (Join-Path $src "target") -Recurse -Filter "*assembly*.jar" | Sort-Object LastWriteTime -Descending | Select-Object -First 1
+  $jar = Get-ChildItem -Path (Join-Path $src "target") -Recurse -Filter "*.jar" |
+    Where-Object { $_.FullName -notmatch "\\streams\\" -and $_.Length -gt 1MB } |
+    Sort-Object Length -Descending |
+    Select-Object -First 1
   if (-not $jar) {
-    throw "No assembly jar found under target after sbt assembly."
+    throw "No runnable jar found under target after sbt assembly."
   }
 
   New-Item -ItemType Directory -Path $OutputDir -Force | Out-Null
